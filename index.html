@@ -7,7 +7,7 @@
 <p id='data'></p> 
 
 <script type='text/javascript'>
-	var socket = io.connect('http://localhost:3000')
+	var socket = io.connect('http://receive.herokuapp.com')
 	var container = $('#data')
 	socket.on('data', function (data) {
 		container.append(data.data)
