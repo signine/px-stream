@@ -4,13 +4,18 @@
 
 
 <h1> = ) </h1>
-<p id='data'></p> 
+<p class='data'></p> 
 
 <script type='text/javascript'>
-	var socket = io.connect('http://px-stream.herokuapp.com')
-	var container = $('#data')
-	socket.on('fresh-today', function (data) {
-		container.append(data.data)
+	//var socket = io.connect('http://px-stream.herokuapp.com')
+	var socket = io.connect('http://localhost:3000')
+	var size = 50;
+	socket.on('fresh_today', function (data) {
+		if ($('.data').children().size() > size) {
+			$('.data').children().last().remove()
+		}
+		
+		$('.data').prepend("<a id='photo' href='http://500px.com/photo/" + data.id + "'> <img src='" + data.url + "'></a>" )
 	})
 </script>
 

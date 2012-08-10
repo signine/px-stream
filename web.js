@@ -35,7 +35,8 @@ app.get('/fresh_today', function (req, res) {
 
 
 app.get('/input', function (req, res) {
-	io.sockets.emit(req.query['feature'], {photo: req.query['url']})
+	console.log(req.query)
+	io.sockets.emit('fresh_today', {url: req.query['url'], id: req.query['id']})
 	res.end()	
 })
 

@@ -10,7 +10,7 @@
 	var socket = io.connect('http://px-stream.herokuapp.com')
 	var container = $('#data')
 	socket.on('fresh_today', function (data) {
-		container.append(data.data)
+		container.prepend(data.data)
 	})
 </script>
 
