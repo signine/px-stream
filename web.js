@@ -28,8 +28,14 @@ app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html')
 });
 
+app.get('/fresh_today', function (req, res) {
+	res.sendfile(__dirname + '/fresh_today.html')
+});
+
+
+
 app.get('/input', function (req, res) {
-	io.sockets.emit('data', {data: req.query['q']})
+	io.sockets.emit(req.query['feature'], {photo: req.query['url']})
 	res.end()	
 })
 
