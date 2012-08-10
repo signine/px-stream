@@ -22,7 +22,7 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
-app.listen(30677)
+app.listen( process.env.PORT || 3000)
 
 app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html')
