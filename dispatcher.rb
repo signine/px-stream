@@ -20,7 +20,7 @@ features.each do |f|
 			photos.shift if photos.length > ARRAY_SIZE
 			photos.push photo['id']
 			#puts HTTParty.get("http://px-stream.herokuapp.com/input" + "?feature=#{f}&url=" + photo['images'][0]['url'])
-			HTTParty.get("http://localhost:3000/input" + "?feature=#{f}&url=" + photo['images'][0]['url'] + "&id=" + photo['id'].to_s)
+			HTTParty.get("http://px-stream.herokuapp.com/input" + "?feature=#{f}&url=" + photo['images'][0]['url'] + "&id=" + photo['id'].to_s)
 		end
 		sleep(1)
 	end
