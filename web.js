@@ -17,7 +17,10 @@ app.listen(port, function() {
 var app = require('express').createServer()
 var io = require('socket.io').listen(app)
 
-var data = []
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 
 app.listen(3000)
 
