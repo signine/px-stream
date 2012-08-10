@@ -16,7 +16,7 @@ features.each do |f|
 		data.each do |photo|
 			next if photos.include?(photo['id']) || photo['nsfw']
 			photos.push photo['id']
-			HTTParty.get("http://px-stream.herokuapp.com/" + "?feature=#{f}&photo=" + photo['images'][0]['url'])
+			HTTParty.get("http://px-stream.herokuapp.com/" + "?feature=#{f}&url=" + photo['images'][0]['url'])
 			puts photo['images'][0]['url']
 		end
 	end
