@@ -7,7 +7,7 @@
 <p id='data'></p> 
 
 <script type='text/javascript'>
-	var socket = io.connect('http://receive.herokuapp.com')
+	var socket = io.connect('http://px-stream.herokuapp.com')
 	var container = $('#data')
 	socket.on('data', function (data) {
 		container.append(data.data)
