@@ -22,7 +22,7 @@ io.configure(function () {
   io.set("polling duration", 10); 
 });
 
-app.listen(3000)
+app.listen(30677)
 
 app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html')
