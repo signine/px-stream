@@ -11,7 +11,7 @@
 	var data = <%- data %>
 
 	var socket = io.connect('<%= host %>')
-	for (i in data)
+	for (var i in data.reverse())
 		$('.data').prepend("<a id='photo' href='http://500px.com/photo/" + data[i].id + "'> <img src='" + data[i].url + "'></a>" )
 
 
