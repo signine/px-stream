@@ -49,7 +49,7 @@ function fetch_data() {
 	}, function (err, res, body) {
 			var data = JSON.parse(body)['photos'].reverse()
 			for (var i in data) {
-				if (data[i]['id'] > last_id) {
+				if (data[i]['id'] > last_id && data[i]['nsfw'] == false) {
 					last_id = data[i]['id']
 					if (photos.length > ARRAY_SIZE)
 						photos.pop()
